@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 p-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div class="text-center mb-6  mt-6">
+        <h2 class="text-2xl font-bold">Dream 4 You</h2>
+        <p class="text-gray-700">  
+        </p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6 mt-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <div class="form-row-item">
+                <label for="date" class="block text-gray-700">Labour Date:</label>
+                <input type="date" id="date" placeholder="Enter Labour Date" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="masoncount" class="block text-gray-700">Mason Count:</label>
+                <input type="number" id="masoncount" placeholder="Enter Manson Count" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="masonamount" class="block text-gray-700">Mason Amount:</label>
+                <input type="number" id="masonamount" placeholder="Enter Manson Amount" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="helpercount" class="block text-gray-700">Helper Count:</label>
+                <input type="number" id="helpercount" placeholder="Enter Helper Count" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="helperamount" class="block text-gray-700">Helper Amount:</label>
+                <input type="number" id="helperamount" placeholder="Enter Helper Count" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="amount" class="block text-gray-700">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter Amount" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="advance" class="block text-gray-700">Advance Amount:</label>
+                <input type="number" id="advance" placeholder="Enter Advance Amount" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center gap-4 mb-6 mt-10">
+        <button onclick="addRow()" class="px-4 py-2 bg-blue-500 text-white rounded">Add Data</button>
+        <button onclick="generatePDF()" class="px-4 py-2 bg-green-500 text-white rounded">Download PDF</button>
+        <button onclick="cleardata()" class="px-4 py-2 bg-red-500 text-white rounded">Clear Data</button>
+    </div>
+
+    <h2 class="text-2xl font-semibold text-center mt-16 mb-8">Invoice Data Table</h2>
+    <div class="overflow-x-auto">
+        <table id="dataTable" class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-2 px-3 border border-gray-300">Labour Date</th>
+                    <th class="py-2 px-3 border border-gray-300">Mason Count</th>
+                    <th class="py-2 px-3 border border-gray-300">Mason Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">Helper Count</th>
+                    <th class="py-2 px-3 border border-gray-300">Helper Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="max-w-md mx-auto mt-10 p-4 bg-white rounded-lg shadow-md">
+        <div class="flex justify-between items-center mb-4">
+            <label for="advanceamount" class="text-lg font-medium text-gray-700">Advance Amount:</label>
+            <input type="text" id="advanceamount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+    
+        <div class="flex justify-between items-center mb-4">
+            <label for="helpertotalamount" class="text-lg font-medium text-gray-700">Helper Total Amount:</label>
+            <input type="text" id="helpertotalamount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+    
+        <div class="flex justify-between items-center mb-4">
+            <label for="masontotalamount" class="text-lg font-medium text-gray-700">Mason Total Amount:</label>
+            <input type="text" id="masontotalamount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+    
+        <div class="flex justify-between items-center mb-4">
+            <label for="totalamount" class="text-lg font-medium text-gray-700">Amount Total:</label>
+            <input type="text" id="totalamount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+        <div class="flex justify-between items-center mb-4">
+            <label for="totalamount" class="text-lg font-medium text-gray-700">GrandTotal</label><p>(Helper, Mason, Amount):</p>
+            <input type="text" id="grandamount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+    
+        <div class="flex justify-between items-center">
+            <label for="allTotalAmount" class="text-lg font-medium text-gray-700">Overall Grand Total:</label>
+            <input type="text" id="allTotalAmount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+    </div>
+    
+
+    <script src="main.js"></script>
+    <!-- Include the XLSX library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</body>
+
+</html>
