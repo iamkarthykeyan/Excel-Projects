@@ -10,6 +10,7 @@ var d = document.getElementById("date");
 var invoice_data = document.getElementById("invoice");
 
 function addRow() {
+    // Extracting input values
     let description = document.getElementById("description").value;
     let unit = document.getElementById("unit").value;
     let qty = document.getElementById("qty").value;
@@ -19,66 +20,20 @@ function addRow() {
     let sgstPercentage = parseFloat(document.getElementById("sgst").value);
     let cgst = (amount * cgstPercentage) / 100;
     let sgst = (amount * sgstPercentage) / 100;
+    let totalGst = cgst + sgst;
+    let grandTotal = amount + cgst + sgst;
+    let gst = cgstPercentage + sgstPercentage;
+    let supplierName = document.getElementById("supplierName").value;
 
-    let totalgst = cgst + sgst;
+    // Extracting additional input values
+    let invoice_data = document.getElementById("invoice").value;
+    let date = document.getElementById("date").value;
+    let address = document.getElementById("address").value;
+    let address2 = document.getElementById("address2").value;
+    let pincode = document.getElementById("pincode").value;
+    let gstNo = document.getElementById("gstNo").value;
 
-    // Calculate Grand Total
-    var grandTotal = amount + cgst + sgst;
-    var gst = cgstPercentage + sgstPercentage;
-    var supplierName = document.getElementById("supplierName").value;
-    // invoice
-    let invoice_data;
-    if (invoice.disabled) {
-        invoice_data = invoice.value;
-    } else {
-        invoice_data = document.getElementById("invoice").value;
-        invoice.disabled = true; // Disable the GST input after first use
-    }
-    // date
-    let date;
-    if (d.disabled) {
-        date = d.value;
-    } else {
-        date = document.getElementById("date").value;
-        d.disabled = true; // Disable the GST input after first use
-    }
-
-    // address 1
-    let address;
-    if (add1.disabled) {
-        address = add1.value;
-    } else {
-        address = document.getElementById("address").value;
-        add1.disabled = true; // Disable the GST input after first use
-    }
-
-    // address 2
-    let address2;
-    if (add2.disabled) {
-        address2 = add2.value;
-    } else {
-        address2 = document.getElementById("address2").value;
-        add2.disabled = true; // Disable the GST input after first use
-    }
-
-    // pincode
-    let pincode;
-    if (pin.disabled) {
-        pincode = pin.value;
-    } else {
-        pincode = document.getElementById("address2").value;
-        pin.disabled = true; // Disable the GST input after first use
-    }
-
-    // gst no
-    let gstNo;
-    if (gstNoInput.disabled) {
-        gstNo = gstNoInput.value;
-    } else {
-        gstNo = document.getElementById("gstNo").value;
-        gstNoInput.disabled = true; // Disable the GST input after first use
-    }
-
+    // Inserting new row into the table
     var table = document.getElementById("dataTable");
     var newRow = table.insertRow(table.rows.length);
     var cells = [
@@ -102,12 +57,14 @@ function addRow() {
         sgstPercentage,
     ];
 
+    // Inserting cell data into the new row
     cells.forEach((cell, index) => {
         var newCell = newRow.insertCell(index);
         newCell.textContent = cell;
+        newCell.classList.add("py-3", "px-4", "border", "border-white", "break-all", "whitespace-nowrap", "text-sm");
     });
 
-    // Push data to input array before clearing
+    // Pushing data to input array
     input.push({
         date,
         invoice_data,
@@ -120,7 +77,7 @@ function addRow() {
         sgst: sgst.toFixed(2),
         grandTotal: grandTotal.toFixed(2),
         gst,
-        totalgst,
+        totalGst,
         supplierName,
         address,
         address2,
@@ -129,19 +86,21 @@ function addRow() {
         cgstPercentage,
         sgstPercentage,
     });
-    console.log(input);
 
+    // Updating total amounts
     fullAmount += amount;
-
     allTotalAmount += grandTotal;
-    document.getElementById("allTotalAmount").value =
-        allTotalAmount.toFixed(2);
+    document.getElementById("allTotalAmount").value = allTotalAmount.toFixed(2);
 
+    // Inserting delete button
     var deleteButtonCell = newRow.insertCell(cells.length);
     deleteButtonCell.appendChild(addDeleteButton(newRow));
+    deleteButtonCell.classList.add("py-3", "px-4", "border", "border-white", "text-center");
 
+    // Clearing input fields
     clearInputFields();
 }
+
 
 function clearInputFields() {
     document.getElementById("description").value = "";

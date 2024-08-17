@@ -5,59 +5,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice Data</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 p-4">
+    <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold">MURUGAPPA AGENCY - TAX INVOICE</h2>
+        <p class="text-gray-700">
+            MURUGAPPA AGENCY 136A, ELANGO STREET, MURUGAPPA NAGAR, ERNAVOOR,CHENNAI: 60057.
+        </p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-    <!-- Header -->
-    <header class="bg-white p-6 shadow-md text-center">
-        <h2 class="text-2xl font-bold text-gray-800">MURUGAPPA AGENCY - TAX INVOICE</h2>
-        <p class="text-gray-600">MURUGAPPA AGENCY 136A, ELANGO STREET, MURUGAPPA NAGAR, ERNAVOOR, CHENNAI: 60057.</p>
-    </header>
-
-    <!-- Form Section -->
-    <section class="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-x-auto">
-            <!-- Form Fields -->
-            <div class="col-span-1">
-                <label for="invoice" class="block text-sm font-medium text-gray-700">Invoice no:</label>
-                <input type="text" id="invoice" placeholder="Enter invoice no" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="invoice" class="block text-gray-700">Invoice no:</label>
+                <input type="text" id="invoice" placeholder="Enter invoice no" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="date" class="block text-sm font-medium text-gray-700">Date:</label>
-                <input type="text" id="date" placeholder="Enter Date" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="date" class="block text-gray-700">Date:</label>
+                <input type="text" id="date" placeholder="Enter Date" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="supplierName" class="block text-sm font-medium text-gray-700">Supplier Name:</label>
-                <input type="text" id="supplierName" placeholder="Enter supplier name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="supplierName" class="block text-gray-700">Supplier Name:</label>
+                <input type="text" id="supplierName" placeholder="Enter supplier name" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
-                <input type="text" id="description" placeholder="Enter description" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="description" class="block text-gray-700">Description:</label>
+                <input type="text" id="description" placeholder="Enter description" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="address" class="block text-sm font-medium text-gray-700">Address Line 1:</label>
-                <input type="text" id="address" placeholder="Enter address line1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="address" class="block text-gray-700">Address Line 1:</label>
+                <input type="text" id="address" placeholder="Enter address line1" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="address2" class="block text-sm font-medium text-gray-700">Address Line 2:</label>
-                <input type="text" id="address2" placeholder="Enter address line2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="address2" class="block text-gray-700">Address Line 2:</label>
+                <input type="text" id="address2" placeholder="Enter address line2" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="pincode" class="block text-sm font-medium text-gray-700">Pincode:</label>
-                <input type="text" id="pincode" placeholder="Enter Pincode" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="pincode" class="block text-gray-700">Pincode:</label>
+                <input type="text" id="pincode" placeholder="Enter Pincode" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="unit" class="block text-sm font-medium text-gray-700">Unit:</label>
-                <select id="unit" name="dropdown" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="unit" class="block text-gray-700">Unit:</label>
+                <select class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" id="unit" name="dropdown">
                     <option value="">-- Select an option --</option>
                     <option value="Pkt">Pkt</option>
                     <option value="Bundle">Bundle</option>
@@ -66,90 +64,87 @@
                 </select>
             </div>
 
-            <div class="col-span-1">
-                <label for="gstNo" class="block text-sm font-medium text-gray-700">GST No:</label>
-                <input type="text" id="gstNo" placeholder="Enter GST No" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="gstNo" class="block text-gray-700">GST No:</label>
+                <input type="text" id="gstNo" placeholder="Enter GST No" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="qty" class="block text-sm font-medium text-gray-700">Qty:</label>
-                <input type="number" id="qty" placeholder="Enter quantity" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="qty" class="block text-gray-700">Qty:</label>
+                <input type="number" id="qty" placeholder="Enter quantity" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="rate" class="block text-sm font-medium text-gray-700">Rate:</label>
-                <input type="number" id="rate" placeholder="Enter rate" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="rate" class="block text-gray-700">Rate:</label>
+                <input type="number" id="rate" placeholder="Enter rate" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="cgst" class="block text-sm font-medium text-gray-700">CGST %:</label>
-                <input type="number" id="cgst" placeholder="Enter CGST" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="cgst" class="block text-gray-700">CGST %:</label>
+                <input type="number" id="cgst" placeholder="Enter CGST" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-1">
-                <label for="sgst" class="block text-sm font-medium text-gray-700">SGST %:</label>
-                <input type="number" id="sgst" placeholder="Enter SGST" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+            <div class="form-row-item">
+                <label for="sgst" class="block text-gray-700">SGST %:</label>
+                <input type="number" id="sgst" placeholder="Enter SGST" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="col-span-2">
-                <label for="grandTotal" class="block text-sm font-medium text-gray-700 hidden">Grand Total:</label>
-                <input type="number" id="grandTotal" placeholder="Enter grand total" readonly class="mt-1 block w-full border-gray-300 rounded-md shadow-sm hidden">
+            <div class="form-row-item hidden">
+                <label for="grandTotal" class="block text-gray-700">Grand Total:</label>
+                <input type="number" id="grandTotal" placeholder="Enter grand total" readonly class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
         </div>
+    </div>
 
-        <!-- Buttons -->
-        <div class="flex flex-wrap justify-center gap-4 mt-6">
-            <button onclick="addRow()" class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add Data</button>
-            <button onclick="generateExcel()" class="bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">Download Excel</button>
-            <button onclick="generatePDF()" class="bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">Download PDF</button>
-        </div>
-    </section>
+    <div class="flex justify-center gap-4 mb-6">
+        <button onclick="addRow()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Add Data</button>
+        <button onclick="generateExcel()" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Download Excel</button>
+        <button onclick="generatePDF()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Download PDF</button>
+    </div>
 
-    <!-- Data Table -->
-    <section class="max-w-4xl mx-auto p-6 bg-white shadow-md mt-6 rounded-lg">
-        <h2 class="text-xl font-bold text-gray-800 mb-4">Invoice Data Table</h2>
-        <div class="overflow-x-auto">
-            <table id="dataTable" class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md divide-y divide-gray-200">
-                <thead class="bg-gray-200 text-gray-600">
-                    <tr>
-                        <th class="p-3 text-left text-sm font-medium">S.no</th>
-                        <th class="p-3 text-left text-sm font-medium">Invoice no</th>
-                        <th class="p-3 text-left text-sm font-medium">Date</th>
-                        <th class="p-3 text-left text-sm font-medium">Description</th>
-                        <th class="p-3 text-left text-sm font-medium">Unit</th>
-                        <th class="p-3 text-left text-sm font-medium">Qty</th>
-                        <th class="p-3 text-left text-sm font-medium">Rate</th>
-                        <th class="p-3 text-left text-sm font-medium">Amount</th>
-                        <th class="p-3 text-left text-sm font-medium">CGST Amount</th>
-                        <th class="p-3 text-left text-sm font-medium">SGST Amount</th>
-                        <th class="p-3 text-left text-sm font-medium">Grand Total</th>
-                        <th class="p-3 text-left text-sm font-medium">Supplier Name</th>
-                        <th class="p-3 text-left text-sm font-medium">Address line1</th>
-                        <th class="p-3 text-left text-sm font-medium">Address line2</th>
-                        <th class="p-3 text-left text-sm font-medium">Pincode</th>
-                        <th class="p-3 text-left text-sm font-medium">GST No</th>
-                        <th class="p-3 text-left text-sm font-medium">CGST %</th>
-                        <th class="p-3 text-left text-sm font-medium">SGST %</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200">
-                    <!-- Data will be dynamically added here -->
-                </tbody>
-            </table>
-        </div>
-    </section>
+    <h2 class="text-xl font-semibold text-center mb-4">Invoice Data Table</h2>
+    <div class="overflow-x-auto">
+        <table id="dataTable" class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-2 px-3 border border-gray-300">S.no</th>
+                    <th class="py-2 px-3 border border-gray-300">Invoice no</th>
+                    <th class="py-2 px-3 border border-gray-300">Date</th>
+                    <th class="py-2 px-3 border border-gray-300">Description</th>
+                    <th class="py-2 px-3 border border-gray-300">Unit</th>
+                    <th class="py-2 px-3 border border-gray-300">Qty</th>
+                    <th class="py-2 px-3 border border-gray-300">Rate</th>
+                    <th class="py-2 px-3 border border-gray-300">Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">CGST Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">SGST Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">Grand Total</th>
+                    <th class="py-2 px-3 border border-gray-300">Supplier Name</th>
+                    <th class="py-2 px-3 border border-gray-300">Address line1</th>
+                    <th class="py-2 px-3 border border-gray-300">Address line2</th>
+                    <th class="py-2 px-3 border border-gray-300">Pincode</th>
+                    <th class="py-2 px-3 border border-gray-300">GST No</th>
+                    <th class="py-2 px-3 border border-gray-300">CGST %</th>
+                    <th class="py-2 px-3 border border-gray-300">SGST %</th>
+                    <th class="py-2 px-3 border border-gray-300">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    
 
-    <!-- Footer -->
-    <footer class="bg-white p-6 shadow-md mt-6">
-        <div class="flex items-center justify-center">
-            <label for="allTotalAmount" class="text-lg font-medium text-gray-800">Overall Grand Total:</label>
-            <input type="text" id="allTotalAmount" readonly class="ml-4 px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-700">
-        </div>
-    </footer>
+    <div class="flex justify-center items-center mt-6 gap-2">
+        <label for="allTotalAmount" class="text-lg font-medium">Overall Grand Total:</label>
+        <input type="text" id="allTotalAmount" readonly class="w-24 p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+    </div>
 
-    <script src="./main.js"></script>
+    <script src="main.js"></script>
+    <!-- Include the XLSX library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 </body>
 
 </html>
