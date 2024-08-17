@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invoice Data</title>
+    <title>Dream4You</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,6 +21,11 @@
             <div class="form-row-item">
                 <label for="date" class="block text-gray-700">Labour Date:</label>
                 <input type="date" id="date" placeholder="Enter Labour Date" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="companyname" class="block text-gray-700">Company Name:</label>
+                <input type="text" id="companyname" placeholder="Enter Company Name" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
             <div class="form-row-item">
@@ -41,11 +46,6 @@
             <div class="form-row-item">
                 <label for="helperamount" class="block text-gray-700">Helper Amount:</label>
                 <input type="number" id="helperamount" placeholder="Enter Helper Count" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
-            </div>
-
-            <div class="form-row-item">
-                <label for="amount" class="block text-gray-700">Amount:</label>
-                <input type="number" id="amount" placeholder="Enter Amount" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
             </div>
 
             <div class="form-row-item">
@@ -103,15 +103,9 @@
         </div>
 
         <div class="flex justify-between items-center mb-4">
-            <label for="totalamount" class="text-lg font-medium text-gray-700">GrandTotal</label><p>(Helper, Mason, Amount):</p>
+            <label for="totalamount" class="text-lg font-medium text-gray-700">GrandTotal</label>
             <input type="text" id="grandamount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
-    
-        <div class="flex justify-between items-center">
-            <label for="allTotalAmount" class="text-lg font-medium text-gray-700">Overall Grand Total:</label>
-            <input type="text" id="allTotalAmount" readonly class="w-32 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-        </div>
-    </div>
     
 
     <script src="main.js"></script>
