@@ -344,7 +344,6 @@ ${input
   <td class="empty">${row1}</td>
   <td class="empty">${row1}</td>
   </tr>
-  
 
   </table>
 </tbody>
