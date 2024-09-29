@@ -1,11 +1,13 @@
 import './App.css'
+import Front1 from './Components/LandingPage/Front1'
 import Navbar from './Components/Navbar/Navbar'
 
 function App() {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
+      <Front1 />
     </>
   )
 }
