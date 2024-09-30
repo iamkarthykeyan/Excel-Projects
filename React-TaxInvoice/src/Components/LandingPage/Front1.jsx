@@ -58,7 +58,7 @@ const Front1 = () => {
         </div>
 
         <h2 className="text-3xl font-bold mb-4 text-gray-900 leading-snug">
-        Effortless Invoicing, Seamless Tax Management
+          Effortless Invoicing, Seamless Tax Management
         </h2>
 
         <div className="flex items-center space-x-2 text-gray-600 text-sm mb-5">
@@ -72,23 +72,24 @@ const Front1 = () => {
           <span>2024</span>
         </div>
         <p>Simplify your invoicing with our intuitive Tax Invoice Application. Designed for ease and efficiency, it streamlines your tax processes, allowing you to focus on what truly matters your business. Transform the way you manage your finances today!</p>
-        <Button variant="text" className="flex items-center gap-2 mt-5">
-        GET STARTED{" "}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-5 w-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-          />
-        </svg>
-      </Button>
+        <Button className="flex items-center justify-center gap-2 mt-5 bg-black text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-grey-700 transition-all duration-300">
+          GET STARTED
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-5 w-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+            />
+          </svg>
+        </Button>
+
       </div>
 
       {/* Right Section - Tips and Resources with box shadow effect */}
@@ -106,8 +107,11 @@ const Front1 = () => {
             />
           </div>
           <h3 className="text-xl font-semibold text-gray-900">
-          Instant Access with QR Code
+            Instant Access with QR Code
           </h3>
+          <p className="text-gray-500 mt-3">
+            "Scan for Instant Access! Your Tax Invoice is Just a Click Away!"
+          </p>
         </div>
 
         {/* Right-side card 2 */}
@@ -117,14 +121,16 @@ const Front1 = () => {
         >
           <div className="mb-4">
             <img
-              src="https://plus.unsplash.com/premium_photo-1680721444874-6b52aa31e26c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your image URL
+              src="https://images.unsplash.com/photo-1707761918029-1295034aa31e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your image URL
               alt="Image 2"
               className="w-full h-40 object-cover rounded-lg shadow-none"
             />
           </div>
           <h3 className="text-xl font-semibold text-gray-900">
-          Seamless Tax Calculations
+            Seamless Tax Calculations
           </h3>
+          <p className="text-gray-500 mt-3">
+          "Say Goodbye to Tax Time Stress! Experience Seamless Calculations Today!"</p>
         </div>
       </div>
     </div>
