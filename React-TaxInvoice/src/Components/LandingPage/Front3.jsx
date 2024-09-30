@@ -6,12 +6,28 @@ import { Button } from "@material-tailwind/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-    { title: "Account Creation", content: "Easily create your account with our user-friendly registration process. Secure your personal information while signing up." },
-    { title: "Update Your Info", content: "Keep your account details up to date. You can modify your personal or business information anytime." },
-    { title: "Generate QR Code", content: "Instantly generate a QR code for your invoices and payments, making transactions seamless for you and your customers." },
-    { title: "Download as PDF", content: "Download your invoices and transaction history as a PDF for your records or to share with your clients." },
-    { title: "Access History", content: "View your full history of transactions, invoices, and account activity at any time for easy record-keeping and monitoring." },
+    { 
+      title: "Account Creation", 
+      content: "Our platform offers a seamless account creation process that allows users to register quickly and easily. You will be guided through a series of steps to ensure your account is set up securely. We prioritize the protection of your personal information, implementing the latest security measures to keep your data safe. Enjoy features in your account is created!" 
+    },
+    { 
+      title: "Update Your Info", 
+      content: "Keeping your information current is crucial, and our system makes it incredibly easy to update your personal or business details. Whether you need to change your email address, phone number, or any other information, you can do it with just a few clicks. This ensures that you receive important updates and notifications without interruption. Your account remains fully customized to meet your needs at all times." 
+    },
+    { 
+      title: "Generate QR Code", 
+      content: "Our QR code generation feature allows you to create unique QR codes for your invoices and payment requests in an instant. This modern approach to payments enhances the customer experience by enabling quick and contactless transactions. Simply input the necessary details, and our system will generate a QR code that can be scanned by your clients, simplifying the payment process for everyone involved." 
+    },
+    { 
+      title: "Download as PDF", 
+      content: "Easily download your invoices and transaction history as high-quality PDF files, making it convenient for record-keeping or sharing with clients. This feature allows you to maintain accurate records of all your transactions and invoices in a professional format. Whether you need these documents for tax purposes, financial reviews, or client communication, our PDF download feature has you covered, ensuring you have the necessary documentation at your fingertips." 
+    },
+    { 
+      title: "Access History", 
+      content: "Stay organized by accessing your complete transaction history with just a click. Our platform provides a comprehensive view of all your past invoices, payments, and account activities. This feature is designed to help you monitor your financial interactions and keep track of your spending effortlessly. Whether for personal use or business management, you will always have a detailed overview of your activities to help you make informed decisions." 
+    },
   ];
+  
   
 
 const Front3 = () => {
