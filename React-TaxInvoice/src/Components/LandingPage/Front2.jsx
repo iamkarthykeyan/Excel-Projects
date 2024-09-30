@@ -6,16 +6,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlogSection = () => {
   useEffect(() => {
-    // Animation for the left section
+    // Staggered animation for the left section
     gsap.fromTo(
       ".fade-in-left",
       { x: -100, opacity: 0 }, // Start from left and transparent
       {
         x: 0, // End at original position
         opacity: 1, // Fully visible
-        duration: 1.5,
+        duration: 1,
+        stagger: 0.5, // Stagger each element by 0.3 seconds
         scrollTrigger: {
-          trigger: ".fade-in-left", // Trigger animation on this element
+          trigger: ".fade-in-left", // Trigger animation on these elements
           start: "top 80%", // Start the animation when the top of the element is 80% from the top of the viewport
           toggleActions: "play none none reverse", // Play on enter, reverse on leave
         },
@@ -30,9 +31,9 @@ const BlogSection = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Left Column */}
-        <div className="lg:col-span-2 space-y-12 fade-in-left">
+        <div className="lg:col-span-2 space-y-12">
           {/* First Article */}
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 fade-in-left">
             <div className="w-1/3">
               <img
                 src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTl8fGFpfGVufDB8fDB8fHww"
@@ -148,7 +149,7 @@ const BlogSection = () => {
             <img
               src="https://images.unsplash.com/photo-1546430783-fe4b9c159e52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Article 4"
-              className="rounded-lg w-full"
+              className="rounded-lg mb-4"
             />
             <div className="absolute bottom-4 left-4 text-white">
               <span className="text-sm font-bold uppercase">Quote</span>
