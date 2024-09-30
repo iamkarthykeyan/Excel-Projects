@@ -31,7 +31,6 @@ const Front3 = () => {
 
     const toggleSection = (index) => {
         if (openIndex === index) {
-            // Collapse the section smoothly
             gsap.to(contentRefs.current[index], {
                 height: 0,
                 opacity: 0,
@@ -40,15 +39,12 @@ const Front3 = () => {
             });
             setOpenIndex(null);
         } else {
-            // Expand the new section
             gsap.to(contentRefs.current[index], {
                 height: "auto",
                 opacity: 1,
                 duration: 0.6,
                 ease: "power2.out",
             });
-
-            // Collapse previously opened section
             if (openIndex !== null) {
                 gsap.to(contentRefs.current[openIndex], {
                     height: 0,
@@ -63,14 +59,11 @@ const Front3 = () => {
 
     return (
         <div className=" text-white min-h-screen flex flex-col items-center py-10 bg-black">
-            {/* Heading */}
             <h1 className="text-3xl font-bold text-gray-500 mb-20">Guidelines | How to Use?</h1>
 
-            {/* Service List */}
             <div className="w-full max-w-full px-4 md:px-16">
                 {services.map((service, index) => (
                     <div key={index} className="mb-4">
-                        {/* Button to toggle open/close */}
                         <button
                             onClick={() => toggleSection(index)}
                             className="flex justify-between items-center w-full px-6 py-4 bg-black text-left text-2xl font-semibold rounded-lg"

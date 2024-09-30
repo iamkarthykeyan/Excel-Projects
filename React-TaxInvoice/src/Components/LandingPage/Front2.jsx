@@ -6,19 +6,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlogSection = () => {
   useEffect(() => {
-    // Staggered animation for the left section
     gsap.fromTo(
       ".fade-in-left",
-      { x: -100, opacity: 0 }, // Start from left and transparent
+      { x: -100, opacity: 0 },
       {
-        x: 0, // End at original position
-        opacity: 1, // Fully visible
+        x: 0, 
+        opacity: 1,
         duration: 1,
-        stagger: 0.5, // Stagger each element by 0.3 seconds
+        stagger: 0.5, 
         scrollTrigger: {
-          trigger: ".fade-in-left", // Trigger animation on these elements
-          start: "top 80%", // Start the animation when the top of the element is 80% from the top of the viewport
-          toggleActions: "play none none reverse", // Play on enter, reverse on leave
+          trigger: ".fade-in-left", 
+          start: "top 80%",
+          toggleActions: "play none none reverse", 
         },
       }
     );

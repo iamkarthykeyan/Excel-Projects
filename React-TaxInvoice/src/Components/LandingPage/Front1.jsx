@@ -6,16 +6,13 @@ const Front1 = () => {
   const cardRef = useRef(null);
   const tipRefs = useRef([]);
 
-  // GSAP animation for main card and right-side cards
   useEffect(() => {
-    // Main card (left side) animation
     gsap.fromTo(
       cardRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
 
-    // Right-side cards staggered animation (right to left)
     tipRefs.current.forEach((tip, index) => {
       gsap.fromTo(
         tip,
